@@ -48,21 +48,6 @@
 </table>
 <script src="scrypt.js"></script>
 <div id="map"></div>
-<script>
-	var map = L.map('map').
-	   setView([Latitud, Longitud],
-	   15);
-</script>
-<script>
- L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-          maxZoom: 18
-      }).addTo(mapsipe);
-
-L.marker([Latitud, Longitud]).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    .openPopup();
-</script>
 </body>
 </html>
 
@@ -77,5 +62,18 @@ L.marker([Latitud, Longitud]).addTo(map)
 				},1500
 			);			
 	});
+	
+</script>
+
+<script>
+	var map = L.map('map').setView([Latitud =11.21894671,Longitud =-74.17632537], 16);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+L.marker([Latitud =11.21894671,Longitud =-74.17632537]).addTo(map)
+    .bindPopup('My location.')
+    .openPopup();
 	
 </script>
