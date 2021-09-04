@@ -66,13 +66,13 @@
 </script>
 
 <script>
-	var map = L.map('map').setView([Latitud =11.21894671,Longitud =-74.17632537], 16);
+	var map = L.map('map').setView([id="Latitud",id="Longitud"], 16);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-L.marker([Latitud =11.21894671,Longitud =-74.17632537]).addTo(map)
+L.marker([id="Latitud",id="Longitud"]).addTo(map)
     .bindPopup('My location.')
     .openPopup();
 	
