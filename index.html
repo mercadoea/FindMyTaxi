@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title> </title>
+	<meta charset = "utf-8">
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 	<script
   src="https://code.jquery.com/jquery-3.6.0.js"
@@ -45,13 +46,25 @@
 		</td>
 		<td id="Hora"></td>
 	</tr>
-</table>
-<script src="scrypt.js"></script>
+</table>	
+
 <div id="map"></div>
+<script type="text/javascript">
+var Latitud='0';
+var Longitud='0';
+					
+var map = L.map('map');//setView([Latitud,Longitud], 1);
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+ maxZoom: 18
+}).addTo(map);
+var myMarker = L.marker([Latitud, Longitud]).addTo(map);
+</script>	
 </body>
 </html>
 
 <script type="text/javascript">
+
 	$(document).ready(function(){
 		setInterval(
 				function(){
@@ -59,25 +72,14 @@
 					$('#Longitud').load('Longitud.php');
 					$('#Fecha').load('Fecha.php');
 					$('#Hora').load('Hora.php');
+					var Latitud=parseFloat($('#Latitud').text());
+					var Longitud= parseFloat($('#Longitud').text());
+
+					map.setView([Latitud,Longitud], 16);
+					var newLatLng = new L.LatLng(Latitud, Longitud);
+    				myMarker.setLatLng(newLatLng); 		
 				},1500
 			);			
 	});
-	
-</script>
 
-<script>
-	var map = L.map('map').setView([Latitud="11.21894671",Longitud="-74.17632537"], 16);
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-
-L.marker([Latitud="11.21894671",Longitud="-74.17632537"],{draggable: true}).addTo(map)
-	.bindPopup('My location')
-	.openPopup();
-	
-//L.marker(["Latitud","Longitud"],).addTo(map);
-	//.bindPopup('My location')
-	//.openPopup();
-	
 </script>
