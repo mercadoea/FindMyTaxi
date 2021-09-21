@@ -35,7 +35,7 @@ $(document).ready(function () {
 
             markers.push(position);
             if (start){
-                markery = new L.marker(markers.at(0)).addTo(map);
+                markery = new L.marker(Latitud,Longitud).addTo(map);
                 start = false;
             }
             
