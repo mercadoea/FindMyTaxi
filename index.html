@@ -62,6 +62,8 @@ attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</
 }).addTo(map);
 var myMarker = L.marker([Latitud, Longitud]).addTo(map).bindPopup('My location')
 	.openPopup();
+var myMarker = L.marker([Latitud, Longitud]).addTo(map);
+var polyline = L.polyline([]).addTo(map)
 </script>	
 </body>
 </html>
@@ -80,7 +82,8 @@ var myMarker = L.marker([Latitud, Longitud]).addTo(map).bindPopup('My location')
 
 					map.setView([Latitud,Longitud], 16);
 					var newLatLng = new L.LatLng(Latitud, Longitud);
-    				myMarker.setLatLng(newLatLng); 		
+    					myMarker.setLatLng(newLatLng); 		
+					polyline.addLatLng([Latitud,Longitud])	
 				},1500
 			);			
 	});
