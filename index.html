@@ -56,7 +56,7 @@
 var Latitud='0';
 var Longitud='0';
 var start = true;			
-var map = L.map('map');
+var map = L.map('map').setView([Latitud,Longitud]);
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
 }).addTo(map);
