@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 var Latitud = 0;
 var Longitud = 0;
@@ -53,3 +54,5 @@ $(document).ready(function () {
         }, 1500
     );
 });
+=======
+>>>>>>> parent of 5e4bac7 (update)
