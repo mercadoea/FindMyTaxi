@@ -1,16 +1,17 @@
 
-var Latitud = '0';
-var Longitud = '0';
+var Latitud = 0;
+var Longitud = 0;
 var markers = new Array;
 var position = new Array;
 var start = true;
+var newLatLng = new L.LatLng(Latitud, Longitud);
 
 
 var map = L.map('map').setView([Latitud, Longitud], 16);
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
 }).addTo(map);
-var myMarker = L.marker([Latitud, Longitud]).addTo(map);
+var myMarker = L.marker(newLatLng).addTo(map);
 var polyline = L.polyline([],{color: 'black'}).addTo(map);
 
 
@@ -44,7 +45,7 @@ $(document).ready(function () {
             var newLatLng = new L.LatLng(Latitud, Longitud);
             myMarker.setLatLng(newLatLng);
             polyline.addLatLng(newLatLng);
-            //map.fitBounds(polyline.getBounds());
+            map.fitBounds(polyline.getBounds());
 
 
 
