@@ -84,10 +84,11 @@ var polyline = L.polyline([]).addTo(map)
                 	start = false;
            			}
 
-					map.setView([Latitud,Longitud], 16);
+					//map.setView([Latitud,Longitud], 16);
 					var newLatLng = new L.LatLng(Latitud, Longitud);
     					myMarker.setLatLng(newLatLng); 		
 					polyline.addLatLng([Latitud,Longitud])	
+					map.fitBounds(polyline.getBounds());
 				},1500
 			);			
 	});
