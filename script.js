@@ -1,6 +1,6 @@
 
-var Latitud = 0;
-var Longitud = 0;
+var Latitud = '0';
+var Longitud = '0';
 var markers = new Array;
 var position = new Array;
 var start = true;
