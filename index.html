@@ -55,7 +55,7 @@
 <script type="text/javascript">
 var Latitud='0';
 var Longitud='0';
-					
+var start = true;			
 var map = L.map('map');
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
@@ -79,6 +79,10 @@ var polyline = L.polyline([]).addTo(map)
 					$('#Hora').load('Hora.php');
 					var Latitud=parseFloat($('#Latitud').text());
 					var Longitud= parseFloat($('#Longitud').text());
+					if (start){
+                	markery = new L.marker([Latitud, Longitud]).addTo(map);
+                	start = false;
+           			}
 
 					map.setView([Latitud,Longitud], 16);
 					var newLatLng = new L.LatLng(Latitud, Longitud);
