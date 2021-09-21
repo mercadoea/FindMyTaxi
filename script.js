@@ -44,7 +44,7 @@ $(document).ready(function () {
             var newLatLng = new L.LatLng(Latitud, Longitud);
             myMarker.setLatLng(newLatLng);
             polyline.addLatLng(newLatLng);
-            map.fitBounds(polyline.getBounds());
+            //map.fitBounds(polyline.getBounds());
 
 
 
