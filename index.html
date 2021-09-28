@@ -128,16 +128,16 @@
                 	start = false;
            			}
 
-					//map.setView([Latitud,Longitud]);
 					var newLatLng = new L.LatLng(Latitud, Longitud);
     					myMarker.setLatLng(newLatLng); 		
 					polyline.addLatLng([Latitud,Longitud])	
 					if(Checkstatus.checked) {
-					map.setView([Latitud,Longitud]);
+						map.fitBounds(polyline.getBounds());
+					
 					} else {
-					map.fitBounds(polyline.getBounds());
+						map.setView([Latitud,Longitud]);					
 					}
-					//map.fitBounds(polyline.getBounds());
+					
 				},1500
 			);			
 	});
