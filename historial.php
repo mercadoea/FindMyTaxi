@@ -24,7 +24,7 @@
       		</div>
 			&nbsp;&nbsp; Inicio
 		</a>
-		<a class="active" href="historial.html">
+		<a class="active" href="historial.php">
 			<div class="record">
 				<img src="record.png" class="img-fluid" style="width:30px; height: 30px; float: left;">
 		  	</div>
