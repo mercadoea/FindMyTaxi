@@ -33,7 +33,7 @@
 
 		<div class="verification">
 			<br> 
-				Ver recorrido del automóvil &nbsp;&nbsp; <input type="checkbox" name="miCheck">
+				Ver recorrido del automóvil &nbsp;&nbsp; <input type="checkbox" name="miCheck" id="miCheck">
 			</br> 
 		</div>
 
@@ -45,7 +45,7 @@
 		  		</div>
 			</b>
 			<br></br>
-			<table border="1">
+			<table border="2" align="center">
 				<tr>
 					<td>
 						<b>Latitud<b>
@@ -94,6 +94,7 @@
 				.openPopup();
 			var myMarker = L.marker([Latitud, Longitud]).addTo(map);
 			var polyline = L.polyline([]).addTo(map)
+			Checkstatus = document.getElementById("miCheck");
 		</script>	
 	</div>
 </body>
@@ -127,10 +128,15 @@
                 	start = false;
            			}
 
-					map.setView([Latitud,Longitud]);
+					//map.setView([Latitud,Longitud]);
 					var newLatLng = new L.LatLng(Latitud, Longitud);
     					myMarker.setLatLng(newLatLng); 		
 					polyline.addLatLng([Latitud,Longitud])	
+					if(Checkstatus.checked) {
+					map.setView([Latitud,Longitud]);
+					} else {
+					map.fitBounds(polyline.getBounds());
+					}
 					//map.fitBounds(polyline.getBounds());
 				},1500
 			);			
