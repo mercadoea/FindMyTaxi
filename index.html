@@ -24,7 +24,7 @@
       		</div>
 			&nbsp;&nbsp; Inicio
 		</a>
-		<a href="historial.php">
+		<a href="historial.html">
 			<div class="record">
 				<img src="record.png" class="img-fluid" style="width:30px; height: 30px; float: left;">
 		  	</div>
@@ -82,64 +82,12 @@
 		<button class="openbtn" id="openButton" onclick="openNav()">&#9776; Abrir Menú</button>
 		<div id="map"></div>
 
-		<script type="text/javascript">
-			var Latitud='0';
-			var Longitud='0';
-			var start = true;			
-			var map = L.map('map').setView([Latitud,Longitud],16);
-			L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
-			}).addTo(map);
-			var myMarker = L.marker([Latitud, Longitud]).addTo(map).bindPopup('My location')
-				.openPopup();
-			var myMarker = L.marker([Latitud, Longitud]).addTo(map);
-			var polyline = L.polyline([]).addTo(map)
-			Checkstatus = document.getElementById("miCheck");
+		<script src="crear_mapa_index.js">
 		</script>	
 	</div>
 </body>
 </html>
 
-<script type="text/javascript">
-	function openNav() {
-  		document.getElementById("mySidebar").style.width = "250px";
- 		document.getElementById("main").style.marginLeft = "250px";
-		document.getElementById("openButton").style.display = "none";
-		}
-
-/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-	function closeNav() {
-		document.getElementById("mySidebar").style.width = "0";
-		document.getElementById("main").style.marginLeft = "0";
-		document.getElementById("openButton").style.display = "block";
-	}
-
-	$(document).ready(function(){
-		setInterval(
-				function(){
-					$('#Latitud').load('Latitud.php');
-					$('#Longitud').load('Longitud.php');
-					$('#Fecha').load('Fecha.php');
-					$('#Hora').load('Hora.php');
-					var Latitud=parseFloat($('#Latitud').text());
-					var Longitud= parseFloat($('#Longitud').text());
-					if (start){
-                	markery = new L.marker([Latitud, Longitud]).addTo(map);
-                	start = false;
-           			}
-
-					var newLatLng = new L.LatLng(Latitud, Longitud);
-    					myMarker.setLatLng(newLatLng); 		
-					polyline.addLatLng([Latitud,Longitud])	
-					if(Checkstatus.checked) {
-						map.fitBounds(polyline.getBounds());
-					
-					} else {
-						map.setView([Latitud,Longitud]);					
-					}
-					
-				},1500
-			);			
-	});
+<script src="index_actualizar.js">
 
 </script>
