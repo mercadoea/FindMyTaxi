@@ -17,7 +17,6 @@
 			timePickerSeconds: true,
 			autoUpdateInput: false,
 			timePicker24Hour: true,
-			autocomplete: off,
 			opens: 'right',
 			showDropdowns: true,
 			locale: {
