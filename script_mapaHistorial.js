@@ -28,7 +28,7 @@ function enviarDatos(){
 
 	function onMapClick(e) {
 		var latlon_click=e.latlng;
-		var min=5;
+		var min=20;
 		var Fecha=[];
 		var n=0;
 		for(var i = 0; i<= latlon.length-1; i++){
