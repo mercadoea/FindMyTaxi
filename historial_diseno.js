@@ -33,7 +33,6 @@
 			$(this).val(picker.startDate.format('YYYY-MM-DD hh:mm:ss') + ' - ' + picker.endDate.format('YYYY-MM-DD hh:mm:ss'));
 			console.log(picker.startDate.format('YYYY-MM-DD hh:mm:ss') + ' - ' + picker.endDate.format('YYYY-MM-DD hh:mm:ss'));
 			$.post('consulta_historico.php', {startDate: picker.startDate.format('YYYY-MM-DD hh:mm:ss'), endDate: picker.endDate.format('YYYY-MM-DD hh:mm:ss')}, function(data) {
-				//console.log(data);
 				latlon = JSON.parse(data);
 				console.log(latlon);
 				var inicial=new L.LatLng(latlon[0][0],latlon[0][1]);
