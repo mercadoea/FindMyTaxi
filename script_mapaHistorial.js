@@ -39,6 +39,7 @@ function enviarDatos(){
       			n=n+1;
     			}
 		}
+			console.log(Fecha);
 			popup
 			.setLatLng(e.latlng)
 			.setContent("Coordenadas geográficas: <br>" + latlon_click.toString()+'<br> Fechas: <br>' + Fecha.join('<br>') )
