@@ -35,6 +35,7 @@ function enviarDatos(){
 
 			var distance = map.distance(latlon_click , [  latlon[i][0] , latlon[i][1]   ]);
 				if (distance < min) {
+					console.log(distance);
       			Fecha[n]=latlon[i][2];
       			n=n+1;
     			}
