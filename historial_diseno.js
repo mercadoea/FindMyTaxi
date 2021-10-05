@@ -37,9 +37,9 @@
 				latlon = JSON.parse(data);
 				console.log(latlon);
 				var inicial=new L.LatLng(latlon[0][0],latlon[0][1]);
-				myMarker.setLatLng(inicial).bindPopup('Ubicación inicial = \nLat: ' + latlon[0][0] + '\nLon: ' + latlon[0][1]).openPopup();
+				myMarker.setLatLng(inicial).bindPopup('Ubicación inicial = <br>Lat: ' + latlon[0][0] + '<br>Lon: ' + latlon[0][1]).openPopup();
 				var final=new L.LatLng(latlon[latlon.length -1][0],latlon[latlon.length -1][1]);
-				markery.setLatLng(final).bindPopup('Ubicación final = Lat: ' + latlon[latlon.length -1][0] + '\nLon: ' + latlon[latlon.length -1][1]).openPopup();
+				markery.setLatLng(final).bindPopup('Ubicación final = <br>Lat: ' + latlon[latlon.length -1][0] + '<br>Lon: ' + latlon[latlon.length -1][1]).openPopup();
 				polyline.setLatLngs(latlon);
 				map.fitBounds(polyline.getBounds());	
 				map.on('click', onMapClick);	
