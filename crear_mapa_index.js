@@ -7,6 +7,5 @@
 			}).addTo(map);
 			var myMarker = L.marker([Latitud, Longitud]).addTo(map).bindPopup('My location')
 				.openPopup();
-			var myMarker = L.marker([Latitud, Longitud]).addTo(map);
 			var polyline = L.polyline([]).addTo(map)
 			Checkstatus = document.getElementById("miCheck");
