@@ -17,7 +17,7 @@ function onMapClick(e) {
 		.setLatLng(e.latlng)
 		.setContent("Coordenadas geográficas: <br>" + latlon_click.toString()+'<br> Fechas: <br>' + Fecha.join('<br>') )
 		.openOn(map);
-	}else if (heckBox.checked == false){ 
+	}else if (checkBox.checked == false){ 
 		circle
 		.setLatLng([0,0]);
 		}
