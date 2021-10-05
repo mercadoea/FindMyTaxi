@@ -10,6 +10,9 @@ function onMapClick(e) {
 				Fecha[n]=latlon[i][2];
 				n=n+1;
 			}
+		}else if (heckBox.checked == false){ 
+		circle
+		.setLatLng([0,0]);
 		}
 		circle
 		.setLatLng(latlon_click);
