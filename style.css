@@ -97,6 +97,12 @@
         color: white;
         font-size: 20px;
     }
+
+    .filterbyubication {
+        padding: 16px;
+        color: white;
+        font-size: 20px;
+    }
     
     .text {
         padding: 30px 8px 6px 16px;
@@ -146,7 +152,7 @@
         content:url(logopruebablanco.png);
         width:40px; /*width of your image*/
         height: 40px;
-     }​
+     }
   
   /* Style page content */
     .main {
