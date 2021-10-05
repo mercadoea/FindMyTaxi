@@ -6,3 +6,4 @@ attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</
 var myMarker = L.marker(LatLon).addTo(map)
 var markery = L.marker(LatLon).addTo(map)
 var polyline = L.polyline([]).addTo(map);	
+var popup = L.popup();
