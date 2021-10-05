@@ -1,5 +1,5 @@
-			var Latitud='0';
-			var Longitud='0';
+			var Latitud='10.996863';
+			var Longitud='-74.810319';
 			var start = true;			
 			var map = L.map('map').setView([Latitud,Longitud],16);
 			L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
