@@ -9,6 +9,11 @@
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
 	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 	<link rel="stylesheet" href="style.css" type="text/css"/> 
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 
 <body style= "background-color:#FCA652">	  
@@ -30,30 +35,23 @@
 		  	</div>
 		&nbsp;&nbsp; Historial
 		</a>
-<form id="frm">
-		<div class="datetime">
-			<hr></hr>
-			<br>
-				<b style="font-size: 18px;">Selecciona la fecha y hora inicial de filtrado:
-					<br>				
-						<input type="datetime-local" name="date_i" id="timestamp" style="width: 210px;" data-date-format="DD MMMM YYYY, h:mm:ss">
-					</br>
-				</b>
-			</br>
-			<br>
-				<b style="font-size: 18px;">Selecciona la fecha y hora final de filtrado:
-					<br>				
-						<input type="datetime-local" name="date_f" id="timestamp" style="width: 210px;" data-date-format="DD MMMM YYYY, h:mm:ss">
-					</br>
-				</b>
-			</br>
-			<br>			
-				<button type="submit" class="searchbtn" name="btn" id="searchDateTime">Buscar&#128270;</button>
-			</br>
-		</div>
-		
-    </div>  
-</form>
+			<div class="datetime">
+				<hr></hr>
+				<br>
+					<b style="font-size: 18px;">Selecciona el rango de fecha y hora de filtrado:
+						<br>				
+							<input type="text" name="datetimes"/>
+						</br>
+					</b>
+				</br>
+			</div>
+			<div class="filterbyubication">
+			
+					Filtrar por Ubicación &nbsp;&nbsp; <input type="checkbox" name="miCheckUbication" id="miCheckUbication" onclick="onMapClick()">
+				
+			</div>
+	</div>  
+
 
 <div id="main" class="main">
 		<button class="openbtn" id="openButton" onclick="openNav()">&#9776; Abrir Menú</button>
@@ -70,7 +68,7 @@
 </body>
 </html>
 
-
 <script src="historial_diseno.js">
 
 </script>
+
