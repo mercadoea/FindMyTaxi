@@ -32,7 +32,7 @@ function openNav() {
 		
 		$('input[name="datetimes"]').on('apply.daterangepicker', function(ev, picker) {
 			$(this).val(picker.startDate.format('YYYY-MM-DD hh:mm:ss') + ' - ' + picker.endDate.format('YYYY-MM-DD hh:mm:ss'));
-			$.post('consulta_historico.php', {startDate: picker.startDate.format('YYYY-MM-DD hh:mm:ss'), endDate: picker.endDate.format('YYYY-MM-DD hh:mm:ss')}, function(data) {
+			$.post('consulta_historico.php', {startDate: picker.startDate.format('YYYY-MM-DD hh:mm:ss'), endDate: picker.endDate.format('YYYY-MM-DD hh:mm:ss'), Value: document.getElementById("Auto").value }, function(data) {
 				latlon = JSON.parse(data);
 				var inicial=new L.LatLng(latlon[0][0],latlon[0][1]);
 				myMarker.setLatLng(inicial).bindPopup('Ubicación inicial = <br>Lat: ' + latlon[0][0] + '<br>Lon: ' + latlon[0][1]).openPopup();

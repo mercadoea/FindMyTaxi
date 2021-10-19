@@ -14,4 +14,3 @@ var circle = L.circle([0,0], {
 					fillOpacity: 0.5,
 					radius: min
 				}).addTo(map);
-
