@@ -160,6 +160,28 @@
         transition: margin-left .5s; /* If you want a transition effect */
         padding: 20px;
     }
+
+    .dropdownLabel {
+        padding: 15px 8px 6px 16px;
+        color: white;
+        font-size: 20px;
+    }
+
+    .dropdown {
+        position: relative;
+        padding: 10px 8px 6px 16px;
+        color: white;
+        font-size: 20px;
+    }
+
+    #Auto {
+        background-color: #d88847;
+        color: white;
+        border-color: white;
+        cursor: pointer;
+        width: 100px;
+        height: 30px;
+      }
   
     @media screen and (max-width: 700px) {
         .sidebar {
