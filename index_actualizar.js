@@ -21,14 +21,23 @@
 
 					$('#Latitud').load("Latitud"+Valor+".php",function(){
 						polyline.setLatLngs([]);
+						var Latitud=parseFloat($('#Latitud').text());
+						var Longitud= parseFloat($('#Longitud').text());
+						var newLatLng = new L.LatLng(Latitud, Longitud);
+						myMarker.setLatLng(newLatLng);
 
 					});
 					$('#Longitud').load("Longitud"+Valor+".php",function(){
 						polyline.setLatLngs([]);
+						var Latitud=parseFloat($('#Latitud').text());
+						var Longitud= parseFloat($('#Longitud').text());
+						var newLatLng = new L.LatLng(Latitud, Longitud);
+						myMarker.setLatLng(newLatLng);
 
 					});
 					$('#Fecha').load("Fecha"+Valor+".php");
 					$('#Hora').load("Hora"+Valor+".php");
+					
 
 		
         });
