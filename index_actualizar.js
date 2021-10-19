@@ -11,22 +11,47 @@
 		document.getElementById("openButton").style.display = "block";
 	}
 
+		var Valor=1;
+
+		const Menu = document.getElementById('Auto');
+        Menu.addEventListener('focusout', (event) => {
+
+
+		Valor = document.getElementById("Auto").value;
+
+					$('#Latitud').load("Latitud"+Valor+".php",function(){
+						polyline.setLatLngs([]);
+
+					});
+					$('#Longitud').load("Longitud"+Valor+".php",function(){
+						polyline.setLatLngs([]);
+
+					});
+					$('#Fecha').load("Fecha"+Valor+".php");
+					$('#Hora').load("Hora"+Valor+".php");
+
+		
+        });
+
+
 	$(document).ready(function(){
 		setInterval(
 				function(){
-					$('#Latitud').load('Latitud.php');
-					$('#Longitud').load('Longitud.php');
-					$('#Fecha').load('Fecha.php');
-					$('#Hora').load('Hora.php');
+
+					$('#Latitud').load("Latitud"+Valor+".php");
+					$('#Longitud').load("Longitud"+Valor+".php");
+					$('#Fecha').load("Fecha"+Valor+".php");
+					$('#Hora').load("Hora"+Valor+".php");
+
 					var Latitud=parseFloat($('#Latitud').text());
 					var Longitud= parseFloat($('#Longitud').text());
 					if (start){
                 	markery = new L.marker([Latitud, Longitud]).addTo(map);
                 	start = false;
            			}
-
 					var newLatLng = new L.LatLng(Latitud, Longitud);
-    					myMarker.setLatLng(newLatLng); 		
+    					myMarker.setLatLng(newLatLng); 
+
 					polyline.addLatLng([Latitud,Longitud])	
 					if(Checkstatus.checked) {
 						map.fitBounds(polyline.getBounds());
