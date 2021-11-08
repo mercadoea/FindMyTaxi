@@ -37,6 +37,7 @@
 					});
 					$('#Fecha').load("Fecha"+Valor+".php");
 					$('#Hora').load("Hora"+Valor+".php");
+					$('#Distancia').load("Distancia"+Valor+".php");
 					
 
 		
@@ -51,6 +52,7 @@
 					$('#Longitud').load("Longitud"+Valor+".php");
 					$('#Fecha').load("Fecha"+Valor+".php");
 					$('#Hora').load("Hora"+Valor+".php");
+					$('#Distancia').load("Distancia"+Valor+".php");
 
 					var Latitud=parseFloat($('#Latitud').text());
 					var Longitud= parseFloat($('#Longitud').text());
