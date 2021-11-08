@@ -5,7 +5,7 @@
 			L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
 			}).addTo(map);
-			var myMarker = L.marker([Latitud, Longitud]).addTo(map).bindPopup('My location')
+			var myMarker = L.marker([Latitud, Longitud]).addTo(map).bindPopup('Ubicación = <br>' + 'Latitud = ' + Latitud + ' Longitud = ' + Longitud)
 				.openPopup();
 			var polyline = L.polyline([]).addTo(map)
 			Checkstatus = document.getElementById("miCheck");
