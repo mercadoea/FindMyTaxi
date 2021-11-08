@@ -72,9 +72,9 @@
 						map.setView([Latitud,Longitud]);					
 					}
 
-					if(Distancia>=250){
+					if(Distancia<=150){
 						document.getElementById("distance").style.color = "#FFF929";
-					} else if(Distancia>=300){
+					} else if(Distancia<=100){
 						document.getElementById("distance").style.color = "#F31C1C";
 					} else {
 						document.getElementById("distance").style.color = "#15FB4D";
