@@ -47,41 +47,59 @@
 			</br> 
 		</div>
 		
-    </div>  
-
-	<div class = "box">
-		<div class="text">
+    <div class="text">
+			<hr></hr>
 			<b style="font-size: 18px;">ÚLTIMA UBICACIÓN
 				<div class="marker">
 					<img src="marker.png" class="img-fluid" style="width:20px; height: 20px; float: right;">
-				  </div>
+		  		</div>
 			</b>
 			<br></br>
+			<table border="2" align="center">
+				<tr>
+					<td>
+						<b>Latitud<b>
+					</td>
+					<td id="Latitud"></td>
+				</tr>
 
-			<b>Latitud = <text id ="Latitud"/> </b>
-			<br></br>
-			<b>Longitud = <text id="Longitud"/> </b>
-			<br></br>
-			<b>Fecha = <text id="Fecha"/> </b>
-			<br></br>
-			<b>Hora= <text id="Hora"/> </b>
+				<tr>
+					<td>
+						<b>Longitud<b>
+					</td>
+					<td id="Longitud"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<b>Fecha<b>
+					</td>
+					<td id="Fecha"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<b>Hora<b>
+					</td>
+					<td id="Hora"></td>
+				</tr>
+			</table>	
 		</div>
-	</div>
+
+    </div>  
 
 	<div id="main" class="main">
 		<button class="openbtn" id="openButton" onclick="openNav()">&#9776; Abrir Menú</button>
-		<div id="map"></div>
-
+	@@ -95,12 +75,13 @@
 		<script src="crear_mapa_index.js">
 		</script>	
-	</div>
-
-	<div id="distance" class="distancebox">
-		<b><div class="element">DISTANCIA <text id="Distancia"/></div><b>
 	</div>
 </body>
 </html>
 
 <script src="index_actualizar.js">
+
+
+
 
 </script>
