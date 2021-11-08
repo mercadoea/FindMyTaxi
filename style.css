@@ -6,6 +6,53 @@
         left: 0px;
         box-shadow: 5px 5px 5px #888;
     }  
+
+
+    .box{
+        width:300px;
+        height:180px;
+        background-color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        position: fixed;
+        z-index: 1;
+        opacity: .6;
+        bottom:40px;
+        right: 37.5%;
+        font-size: 13px;
+        color: white;
+        border-radius:20px;
+    }
+
+    .text {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .distancebox {
+        width:180px;
+        height:80px;
+        background-color: #15FB4D;
+        color: black;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        position: fixed;
+        z-index: 1;
+        opacity: .6;
+        font-size: 25px;
+        top:40px;
+        right:40px;
+        border-radius:25px;
+
+    }
+
+    .element {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    } 
+
    
     .sidenav {
         z-index:1; 
@@ -16,11 +63,12 @@
         padding: 0;
         top: 0; /* Stay at the top */
         left: 0;
-        background-color: #AC4B1C;
+        background-color: #0e5d81;
         overflow: auto; 
         padding-top: 20px;
         overflow-x: hidden;
         transition: 0.5s;
+        font-family: Arial, Helvetica, sans-serif;
     }
   
     .sidenav a {
@@ -33,12 +81,12 @@
     }
   
     .sidenav a.active {
-        background-color: #E2703A;
+        background-color: #1073a1;
         color: white;
     }
 
     .sidenav a:hover:not(.active) {
-        background-color: #D79771;
+        background-color: #2e85ad;
         color: white;
     }
 
@@ -61,7 +109,7 @@
         position: fixed;
         font-size: 15px;
         cursor: pointer;
-        background-color: #AC4B1C;
+        background-color: #0e5d81;
         color: white;
         border: none;
      }
@@ -102,12 +150,6 @@
         padding: 16px;
         color: white;
         font-size: 20px;
-    }
-    
-    .text {
-        padding: 30px 8px 6px 16px;
-        font-size: 13px;
-        color: white;
     }
 
     .datetime {
@@ -175,7 +217,7 @@
     }
 
     #Auto {
-        background-color: #d88847;
+        background-color: #2e85ad;
         color: white;
         border-color: white;
         cursor: pointer;
@@ -200,3 +242,4 @@
           float: none;
         }
     }
+
