@@ -27,6 +27,7 @@ $(document).ready(function () {
             $('#Longitud').load('Longitud.php');
             $('#Fecha').load('Fecha.php');
             $('#Hora').load('Hora.php');
+            $('#Distancia').load('Distancia.php');
             var Latitud = parseFloat($('#Latitud').text());
             var Longitud = parseFloat($('#Longitud').text());
             //map.setView([Latitud, Longitud]);
@@ -53,3 +54,4 @@ $(document).ready(function () {
         }, 1500
     );
 });
+
