@@ -1,4 +1,4 @@
-	function openNav() {
+		function openNav() {
   		document.getElementById("mySidebar").style.width = "250px";
  		document.getElementById("main").style.marginLeft = "250px";
 		document.getElementById("openButton").style.display = "none";
@@ -54,6 +54,7 @@
 					$('#Hora').load("Hora"+Valor+".php");
 					$('#Distancia').load("Distancia"+Valor+".php");
 
+					var Distancia = parseFloat($('#Distancia'));
 					var Latitud=parseFloat($('#Latitud').text());
 					var Longitud= parseFloat($('#Longitud').text());
 					if (start){
@@ -70,7 +71,15 @@
 					} else {
 						map.setView([Latitud,Longitud]);					
 					}
+
+					if(Distancia>=250){
+						document.getElementById("distance").style.color = "#FFF929";
+					} else if(Distancia>=300){
+						document.getElementById("distance").style.color = "#F31C1C";
+					} else {
+						document.getElementById("distance").style.color = "#15FB4D";
+					}
 					
 				},1500
-			);			
+		);			
 	});
