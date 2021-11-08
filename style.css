@@ -8,7 +8,7 @@
     }  
 
 
-    .box {
+    .box{
         width:300px;
         height:180px;
         background-color: black;
@@ -141,7 +141,7 @@
     }
 
     .verification {
-        padding: 16px;
+        padding: 0px 16px;
         color: white;
         font-size: 20px;
     }
@@ -211,8 +211,9 @@
 
     .dropdown {
         position: relative;
-        padding: 10px 8px 6px 16px;
+        padding: 10px 8px 6px 0px;
         color: white;
+        text-align: center;
         font-size: 20px;
     }
 
@@ -242,4 +243,3 @@
           float: none;
         }
     }
-
