@@ -98,6 +98,7 @@
 					$('#Longitud').load("Longitud1.php");
 					$('#Fecha').load("Fecha1.php");
 					$('#Hora').load("Hora1.php");
+					$('#Distancia').load("Distancia1.php");
 					document.getElementById("box").style.display = "block";
 					document.getElementById("box2").style.display = "none";
 					document.getElementById("distance").style.display = "block";
@@ -109,7 +110,7 @@
 					map.removeLayer(polyline_v2);
 					map.removeLayer(marker_v2);
 					map.addLayer(marker_v1);
-					var Distancia = parseFloat($("#Distancia1"));
+					var Distancia = parseFloat($("#Distancia1").text());
 					var newLatLng = new L.LatLng(Latitud1, Longitud1);
     					marker_v1.setLatLng(newLatLng); 
 
@@ -134,6 +135,7 @@
 					$('#Longitud').load("Longitud2.php");
 					$('#Fecha').load("Fecha2.php");
 					$('#Hora').load("Hora2.php");
+					$('#Distancia').load("Distancia2.php");
 					map.addLayer(polyline_v2);
 					map.removeLayer(polyline_v1);
 					map.removeLayer(marker_v1);
@@ -144,7 +146,7 @@
 					document.getElementById("distance2").style.display = "none";
 					document.getElementById("distance3").style.display = "none";
 
-					var Distancia = parseFloat($("#Distancia2"));
+					var Distancia = parseFloat($("#Distancia2").text());
 					var newLatLng = new L.LatLng(Latitud2, Longitud2);
     					marker_v2.setLatLng(newLatLng); 
 
@@ -166,6 +168,9 @@
 
 
 			}else if(Valor==3){
+				
+					$('#Distancia1').load("Distancia1.php");
+					$('#Distancia2').load("Distancia2.php");
 
 					map.addLayer(polyline_v1);
 					map.addLayer(polyline_v2);
@@ -178,8 +183,8 @@
 					document.getElementById("distance3").style.display = "block";
 
 
-					var Distancia1 = parseFloat($("#Distancia1"));
-					var Distancia2 = parseFloat($("#Distancia2"));
+					var Distancia1 = parseFloat($("#Distancia1").text());
+					var Distancia2 = parseFloat($("#Distancia2").text());
 
 					var newLatLng1 = new L.LatLng(Latitud1, Longitud1);
     					marker_v1.setLatLng(newLatLng1);
