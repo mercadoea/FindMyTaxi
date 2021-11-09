@@ -122,7 +122,7 @@
 						map.setView([Latitud1,Longitud1]);					
 					}
 
-					if(Distancia<=150){
+					if(Distancia<=150 && Distancia>100){
 						document.getElementById("distance").style.backgroundColor = "#FFF929";
 					} else if(Distancia<=100){
 						document.getElementById("distance").style.backgroundColor = "#F31C1C";
@@ -158,7 +158,7 @@
 						map.setView([Latitud2,Longitud2]);					
 					}
 
-					if(Distancia<=150){
+					if(Distancia<=150 && Distancia>100){
 						document.getElementById("distance").style.backgroundColor = "#FFF929";
 					} else if(Distancia<=100){
 						document.getElementById("distance").style.backgroundColor = "#F31C1C";
@@ -191,7 +191,7 @@
 					var newLatLng2 = new L.LatLng(Latitud2, Longitud2);
     					marker_v2.setLatLng(newLatLng2);
 				
-					if(Distancia1<=150){
+					if(Distancia1<=150 && Distancia1>100){
 						document.getElementById("distance2").style.backgroundColor = "#FFF929";
 					} else if(Distancia1<=100){
 						document.getElementById("distance2").style.backgroundColor = "#F31C1C";
@@ -199,7 +199,7 @@
 						document.getElementById("distance2").style.backgroundColor = "#15FB4D";
 					}
 
-					if(Distancia2<=150){
+					if(Distancia2<=150 && Distancia2>100){
 						document.getElementById("distance3").style.backgroundColor = "#FFF929";
 					} else if(Distancia2<=100){
 						document.getElementById("distance3").style.backgroundColor = "#F31C1C";
