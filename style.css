@@ -89,7 +89,6 @@
         position: fixed;
         z-index: 1;
         opacity: .6;
-        font-size: 25px;
         top:40px;
         right:40px;
         border-radius:25px;
@@ -112,7 +111,6 @@
         position: fixed;
         z-index: 1;
         opacity: .6;
-        font-size: 25px;
         top:160px;
         right:40px;
         border-radius:25px;
