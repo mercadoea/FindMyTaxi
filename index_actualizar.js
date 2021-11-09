@@ -73,11 +73,12 @@
 					}
 
 					if(Distancia<=150){
-						document.getElementById("distance").style.backgroundColor = "#FFF929";
+						document.getElementById("distance").style.color = "#FFF929";
 					} else if(Distancia<=100){
-						document.getElementById("distance").style.backgroundColor = "#F31C1C";
-					} else {
-						document.getElementById("distance").style.backgroundColor = "#15FB4D";
+						document.getElementById("distance").style.color = "#F31C1C";
+					} else if(Distancia!=0){
+						div.parentNode.removeChild(document.getElementById("elementtext"));
+						document.getElementById("distance").style.color = "#15FB4D";
 					}
 					
 				},1500
