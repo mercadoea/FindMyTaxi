@@ -54,7 +54,7 @@
 					$('#Hora').load("Hora"+Valor+".php");
 					$('#Distancia').load("Distancia"+Valor+".php");
 
-					var Distancia = $('#Distancia');
+					var Distancia = parseFloat($('#Distancia'));
 					console.log(Distancia);
 					var Latitud=parseFloat($('#Latitud').text());
 					var Longitud= parseFloat($('#Longitud').text());
@@ -78,7 +78,7 @@
 					} else if(Distancia<=100){
 						document.getElementById("distance").style.backgroundColor = "#F31C1C";
 					} else if(Distancia!=0){
-						document.getElementById("distance").style.backgroungColor = "#15FB4D";
+						document.getElementById("distance").style.backgroungColor = "Black";
 					}
 					
 				},1500
