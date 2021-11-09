@@ -102,7 +102,7 @@
 					document.getElementById("box2").style.display = "none";
 					document.getElementById("distance").style.display = "block";
 					document.getElementById("distance2").style.display = "none";
-					document.getElementById("distancebox3").style.display = "none";
+					document.getElementById("distance3").style.display = "none";
 
 
 					map.addLayer(polyline_v1);
@@ -142,7 +142,7 @@
 					document.getElementById("box2").style.display = "none";	
 					document.getElementById("distance").style.display = "block";
 					document.getElementById("distance2").style.display = "none";
-					document.getElementById("distancebox3").style.display = "none";
+					document.getElementById("distance3").style.display = "none";
 
 					var Distancia = parseFloat($("#Distancia2"));
 					var newLatLng = new L.LatLng(Latitud2, Longitud2);
@@ -175,7 +175,7 @@
 					document.getElementById("box2").style.display = "block";
 					document.getElementById("distance").style.display = "none";
 					document.getElementById("distance2").style.display = "block";
-					document.getElementById("distancebox3").style.display = "block";
+					document.getElementById("distance3").style.display = "block";
 
 
 					var Distancia1 = parseFloat($("#Distancia1"));
