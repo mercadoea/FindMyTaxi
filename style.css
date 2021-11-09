@@ -22,6 +22,7 @@
         font-size: 13px;
         color: white;
         border-radius:20px;
+
     }
 
     .text {
@@ -44,6 +45,8 @@
         font-size: 13px;
         color: white;
         border-radius:20px;
+        display: none;
+
     }
 
     .text2 {
