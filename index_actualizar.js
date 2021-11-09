@@ -63,8 +63,8 @@
 						document.getElementById("distance").style.backgroundColor = "#FFF929";
 					} else if(Distancia<=100){
 						document.getElementById("distance").style.backgroundColor = "#F31C1C";
-					} else if(Distancia!=0){
-						document.getElementById("distance").style.backgroundColor = "white";
+					} else{
+						document.getElementById("distance").style.backgroundColor = "#15FB4D";
 					}
 					
 					if (start){
