@@ -64,7 +64,7 @@
 					} else if(Distancia<=100){
 						document.getElementById("distance").style.backgroundColor = "#F31C1C";
 					} else if(Distancia!=0){
-						document.getElementById("distance").style.backgroundColor = "#15FB4D";
+						document.getElementById("distance").style.backgroundColor = "white";
 					}
 					
 					if (start){
