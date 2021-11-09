@@ -125,7 +125,7 @@
 						document.getElementById("distance").style.backgroundColor = "#FFF929";
 					} else if(Distancia<=100){
 						document.getElementById("distance").style.backgroundColor = "#F31C1C";
-					} else {
+					} else if(Distancia>150){
 						document.getElementById("distance").style.backgroundColor = "#15FB4D";
 					}
 
@@ -160,7 +160,7 @@
 						document.getElementById("distance").style.backgroundColor = "#FFF929";
 					} else if(Distancia<=100){
 						document.getElementById("distance").style.backgroundColor = "#F31C1C";
-					} else {
+					} else if(Distancia>150){
 						document.getElementById("distance").style.backgroundColor = "#15FB4D";
 					}
 
@@ -190,7 +190,7 @@
 						document.getElementById("distance2").style.backgroundColor = "#FFF929";
 					} else if(Distancia1<=100){
 						document.getElementById("distance2").style.backgroundColor = "#F31C1C";
-					} else {
+					} else if(Distancia1>150){
 						document.getElementById("distance2").style.backgroundColor = "#15FB4D";
 					}
 
@@ -198,7 +198,7 @@
 						document.getElementById("distance3").style.backgroundColor = "#FFF929";
 					} else if(Distancia2<=100){
 						document.getElementById("distance3").style.backgroundColor = "#F31C1C";
-					} else {
+					} else if(Distancia2>150){
 						document.getElementById("distance3").style.backgroundColor = "#15FB4D";
 					}
 
