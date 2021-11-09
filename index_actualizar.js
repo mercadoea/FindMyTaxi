@@ -113,6 +113,8 @@
 					var Distancia = parseFloat($("#Distancia1").text());
 					var newLatLng = new L.LatLng(Latitud1, Longitud1);
     					marker_v1.setLatLng(newLatLng); 
+				    	marker_v1.bindPopup("Vehículo 1").openPopup();
+					var popup = L.popup(); 
 
 
 					if(Checkstatus.checked) {
@@ -149,6 +151,9 @@
 					var Distancia = parseFloat($("#Distancia2").text());
 					var newLatLng = new L.LatLng(Latitud2, Longitud2);
     					marker_v2.setLatLng(newLatLng); 
+					marker_v2.valueOf()._icon.style.filter = 'hue-rotate(180deg)';
+    					marker_v2.bindPopup("Vehículo 2").openPopup();
+					var popup = L.popup();
 
 
 					if(Checkstatus.checked) {
