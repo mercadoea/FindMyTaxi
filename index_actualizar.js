@@ -102,6 +102,8 @@
 					document.getElementById("box2").style.display = "none";
 					document.getElementById("distance").style.display = "block";
 					document.getElementById("distance2").style.display = "none";
+					document.getElementById("distancebox3").style.display = "none";
+
 
 					map.addLayer(polyline_v1);
 					map.removeLayer(polyline_v2);
@@ -140,6 +142,7 @@
 					document.getElementById("box2").style.display = "none";	
 					document.getElementById("distance").style.display = "block";
 					document.getElementById("distance2").style.display = "none";
+					document.getElementById("distancebox3").style.display = "none";
 
 					var Distancia = parseFloat($("#Distancia2"));
 					var newLatLng = new L.LatLng(Latitud2, Longitud2);
@@ -172,6 +175,8 @@
 					document.getElementById("box2").style.display = "block";
 					document.getElementById("distance").style.display = "none";
 					document.getElementById("distance2").style.display = "block";
+					document.getElementById("distancebox3").style.display = "block";
+
 
 					var Distancia1 = parseFloat($("#Distancia1"));
 					var Distancia2 = parseFloat($("#Distancia2"));
@@ -182,19 +187,19 @@
     					marker_v2.setLatLng(newLatLng2);
 				
 					if(Distancia1<=150){
-						document.getElementById("distance").style.backgroundColor = "#FFF929";
-					} else if(Distancia1<=100){
-						document.getElementById("distance").style.backgroundColor = "#F31C1C";
-					} else {
-						document.getElementById("distance").style.backgroundColor = "#15FB4D";
-					}
-
-					if(Distancia2<=150){
 						document.getElementById("distance2").style.backgroundColor = "#FFF929";
-					} else if(Distancia2<=100){
+					} else if(Distancia1<=100){
 						document.getElementById("distance2").style.backgroundColor = "#F31C1C";
 					} else {
 						document.getElementById("distance2").style.backgroundColor = "#15FB4D";
+					}
+
+					if(Distancia2<=150){
+						document.getElementById("distance3").style.backgroundColor = "#FFF929";
+					} else if(Distancia2<=100){
+						document.getElementById("distance3").style.backgroundColor = "#F31C1C";
+					} else {
+						document.getElementById("distance3").style.backgroundColor = "#15FB4D";
 					}
 
 				}
