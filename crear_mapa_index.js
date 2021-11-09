@@ -7,7 +7,7 @@
 			}).addTo(map);
 			var polyline = L.polyline([]).addTo(map);
 			var polyline_v1 = L.polyline([]).addTo(map);
-			var polyline_v2 = L.polyline([]).addTo(map);
+			var polyline_v2 = L.polyline([], {color: 'red'}).addTo(map);
 			var marker_v1 = L.marker([Latitud, Longitud]).addTo(map);
 			var marker_v2 = L.marker([Latitud, Longitud]).addTo(map);
 			Checkstatus = document.getElementById("miCheck");
