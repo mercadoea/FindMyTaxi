@@ -92,7 +92,7 @@
         top:40px;
         right:40px;
         border-radius:25px;
-
+        display: none;
     }
 
     .element2 {
@@ -114,7 +114,7 @@
         top:160px;
         right:40px;
         border-radius:25px;
-
+        display: none;
     }
 
     .element3 {
