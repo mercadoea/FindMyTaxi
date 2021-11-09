@@ -58,6 +58,15 @@
 					console.log(Distancia);
 					var Latitud=parseFloat($('#Latitud').text());
 					var Longitud= parseFloat($('#Longitud').text());
+					
+					if(Distancia<=150){
+						document.getElementById("distance").style.backgroundColor = "#FFF929";
+					} else if(Distancia<=100){
+						document.getElementById("distance").style.backgroundColor = "#F31C1C";
+					} else if(Distancia!=0){
+						document.getElementById("distance").style.backgroundColor = "#15FB4D";
+					}
+					
 					if (start){
                 	markery = new L.marker([Latitud, Longitud]).addTo(map);
                 	start = false;
@@ -71,14 +80,6 @@
 					
 					} else {
 						map.setView([Latitud,Longitud]);					
-					}
-
-					if(Distancia<=150){
-						document.getElementById("distance").style.backgroundColor = "#FFF929";
-					} else if(Distancia<=100){
-						document.getElementById("distance").style.backgroundColor = "#F31C1C";
-					} else if(Distancia!=0){
-						document.getElementById("distance").style.color = "white";
 					}
 					
 				},1500
