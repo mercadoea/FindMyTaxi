@@ -55,6 +55,7 @@
 					$('#Distancia').load("Distancia"+Valor+".php");
 
 					var Distancia = parseFloat($('#Distancia'));
+					document.write (Distancia);
 					var Latitud=parseFloat($('#Latitud').text());
 					var Longitud= parseFloat($('#Longitud').text());
 					if (start){
