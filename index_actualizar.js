@@ -174,10 +174,26 @@
     					marker_v1.setLatLng(newLatLng1);
 					var newLatLng2 = new L.LatLng(Latitud2, Longitud2);
     					marker_v2.setLatLng(newLatLng2);
-
+				
+					if(Distancia1<=150){
+						document.getElementById("distance").style.backgroundColor = "#FFF929";
+					} else if(Distancia1<=100){
+						document.getElementById("distance").style.backgroundColor = "#F31C1C";
+					} else {
+						document.getElementById("distance").style.backgroundColor = "#15FB4D";
 					}
 
-				},1500
+					if(Distancia2<=150){
+						document.getElementById("distance2").style.backgroundColor = "#FFF929";
+					} else if(Distancia2<=100){
+						document.getElementById("distance2").style.backgroundColor = "#F31C1C";
+					} else {
+						document.getElementById("distance2").style.backgroundColor = "#15FB4D";
+					}
+
+				}
+
+			},1500
 		);			
 	});
 
