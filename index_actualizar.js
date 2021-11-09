@@ -78,7 +78,7 @@
 					} else if(Distancia<=100){
 						document.getElementById("distance").style.backgroundColor = "#F31C1C";
 					} else if(Distancia!=0){
-						document.getElementById("distance").style.backgroungColor = "Black";
+						document.getElementById("distance").style.color = "white";
 					}
 					
 				},1500
