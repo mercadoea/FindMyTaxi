@@ -78,7 +78,8 @@
 					} else if(Distancia<=100){
 						document.getElementById("distance").style.color = "#F31C1C";
 					} else if(Distancia!=0){
-						div.parentNode.removeChild(document.getElementById("elementtext"));
+						var div = document.getElementById("elementtext");
+						div.parentNode.removeChild(div);
 						document.getElementById("distance").style.color = "#15FB4D";
 					}
 					
