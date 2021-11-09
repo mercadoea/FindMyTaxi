@@ -181,6 +181,7 @@
 					map.addLayer(polyline_v2);
 					map.addLayer(marker_v1);
 					map.addLayer(marker_v2);
+					marker_v2.valueOf()._icon.style.filter = 'hue-rotate(180deg)';
 					document.getElementById("box").style.display = "none";
 					document.getElementById("box2").style.display = "block";
 					document.getElementById("distance").style.display = "none";
