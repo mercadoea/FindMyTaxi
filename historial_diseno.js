@@ -62,7 +62,7 @@ function openNav() {
 					marker_v2f.setLatLng(newLatLng).bindPopup('Ubicación final del Vehículo 2 = <br>Lat: ' + latlon[i][0] + '<br>Lon: ' + latlon[i][0]).openPopup();
 				}
 			}			
-			
+
 		valor = document.getElementById("Auto").value;
 		cambio(valor);
 
@@ -80,6 +80,7 @@ function openNav() {
 					map.addLayer(polyline_v1);
 					map.addLayer(marker_v1i);
 					map.addLayer(marker_v1f);
+					map.fitBounds(polyline_v1.getBounds());
 				} else if(valor==2){
 					map.removeLayer(polyline_v1);
 					map.removeLayer(marker_v1i);
@@ -89,6 +90,7 @@ function openNav() {
 					map.addLayer(marker_v2f);
 					marker_v2i.valueOf()._icon.style.filter = 'hue-rotate(180deg)';
 					marker_v2f.valueOf()._icon.style.filter = 'hue-rotate(180deg)';
+					map.fitBounds(polyline_v2.getBounds());
 				}else{
 					map.addLayer(polyline_v1);
 					map.addLayer(marker_v1i);
