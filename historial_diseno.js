@@ -31,6 +31,7 @@ function openNav() {
 		});	 
 
 
+
 		$('input[name="datetimes"]').on('apply.daterangepicker', function(ev, picker) {
 			polyline_v1.setLatLngs([]);
 			polyline_v2.setLatLngs([]);
@@ -61,8 +62,17 @@ function openNav() {
 					marker_v2f.setLatLng(newLatLng).bindPopup('Ubicación final del Vehículo 2 = <br>Lat: ' + latlon[i][0] + '<br>Lon: ' + latlon[i][0]).openPopup();
 				}
 			}			
+			
+		valor = document.getElementById("Auto").value;
+		cambio(valor);
 
+		document.getElementById('Auto').onchange = function () {
 			valor = document.getElementById("Auto").value;
+			cambio(valor);
+
+		};			
+
+			function cambio (valor){
 				if(valor==1){
 					map.removeLayer(polyline_v2);
 					map.removeLayer(marker_v2i);
@@ -88,12 +98,15 @@ function openNav() {
 					map.addLayer(marker_v2f);
 					marker_v2i.valueOf()._icon.style.filter = 'hue-rotate(180deg)';
 					marker_v2f.valueOf()._icon.style.filter = 'hue-rotate(180deg)';
-				}												
+				}	
+			}			
 
 				map.on('click', onMapClick);	
 			});
 
 		});
+
+
 
 	  
 		$('input[name="datetimes"]').on('cancel.daterangepicker', function(ev, picker) {
