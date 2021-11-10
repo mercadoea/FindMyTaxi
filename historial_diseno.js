@@ -29,21 +29,72 @@ function openNav() {
     		maxYear: parseInt(moment().format('YYYY'),10)
 		  
 		});	 
-		
+
+
 		$('input[name="datetimes"]').on('apply.daterangepicker', function(ev, picker) {
+			polyline_v1.setLatLngs([]);
+			polyline_v2.setLatLngs([]);
 			$(this).val(picker.startDate.format('YYYY-MM-DD hh:mm:ss') + ' - ' + picker.endDate.format('YYYY-MM-DD hh:mm:ss'));
-			$.post('consulta_historico.php', {startDate: picker.startDate.format('YYYY-MM-DD hh:mm:ss'), endDate: picker.endDate.format('YYYY-MM-DD hh:mm:ss'), Value: document.getElementById("Auto").value }, function(data) {
+			$.post('consulta_historico.php', {startDate: picker.startDate.format('YYYY-MM-DD hh:mm:ss'), endDate: picker.endDate.format('YYYY-MM-DD hh:mm:ss')}, function(data) {
 				latlon = JSON.parse(data);
-				var inicial=new L.LatLng(latlon[0][0],latlon[0][1]);
-				myMarker.setLatLng(inicial).bindPopup('Ubicación inicial = <br>Lat: ' + latlon[0][0] + '<br>Lon: ' + latlon[0][1]).openPopup();
-				var final=new L.LatLng(latlon[latlon.length -1][0],latlon[latlon.length -1][1]);
-				markery.setLatLng(final).bindPopup('Ubicación final = <br>Lat: ' + latlon[latlon.length -1][0] + '<br>Lon: ' + latlon[latlon.length -1][1]).openPopup();
-				polyline.setLatLngs(latlon);
-				map.fitBounds(polyline.getBounds());	
+				console.log(data);
+				var primer_v1=true;
+				var primer_v2=true;
+			for(var i =0; i<latlon.length;i++){
+				if(latlon[i][3]==1){
+					polyline_v1.addLatLng([latlon[i][0],latlon[i][1]]);	
+					if(primer_v1){
+						newLatLng = new L.LatLng(latlon[i][0], latlon[i][1]);
+						marker_v1i.setLatLng(newLatLng).bindPopup('Ubicación inicial del Vehículo 1 = <br>Lat: ' + latlon[i][0] + '<br>Lon: ' + latlon[i][1]).openPopup();
+						primer_v1=false;
+					}
+					newLatLng =new L.LatLng(latlon[i][0], latlon[i][1]);
+					marker_v1f.setLatLng(newLatLng).bindPopup('Ubicación final del Vehículo 1= <br>Lat: ' + latlon[i][0] + '<br>Lon: ' + latlon[i][1]).openPopup();
+				}else if (latlon[i][3]==2){
+				polyline_v2.addLatLng([latlon[i][0],latlon[i][1]])	
+					if(primer_v2){
+						newLatLng = new L.LatLng(latlon[i][0], latlon[i][1]);
+						marker_v2i.setLatLng(newLatLng).bindPopup('Ubicación inicial del Vehículo 2 = <br>Lat: ' + latlon[i][0] + '<br>Lon: ' + latlon[i][1]).openPopup();
+						primer_v2=false;
+					}
+					newLatLng =new L.LatLng(latlon[i][0], latlon[i][1]);
+					marker_v2f.setLatLng(newLatLng).bindPopup('Ubicación final del Vehículo 2 = <br>Lat: ' + latlon[i][0] + '<br>Lon: ' + latlon[i][0]).openPopup();
+				}
+			}			
+
+			valor = document.getElementById("Auto").value;
+				if(valor==1){
+					map.removeLayer(polyline_v2);
+					map.removeLayer(marker_v2i);
+					map.removeLayer(marker_v2f);
+					map.addLayer(polyline_v1);
+					map.addLayer(marker_v1i);
+					map.addLayer(marker_v1f);
+				} else if(valor==2){
+					map.removeLayer(polyline_v1);
+					map.removeLayer(marker_v1i);
+					map.removeLayer(marker_v1f);
+					map.addLayer(polyline_v2);
+					map.addLayer(marker_v2i);
+					map.addLayer(marker_v2f);
+					marker_v2i.valueOf()._icon.style.filter = 'hue-rotate(180deg)';
+					marker_v2f.valueOf()._icon.style.filter = 'hue-rotate(180deg)';
+				}else{
+					map.addLayer(polyline_v1);
+					map.addLayer(marker_v1i);
+					map.addLayer(marker_v1f);
+					map.addLayer(polyline_v2);
+					map.addLayer(marker_v2i);
+					map.addLayer(marker_v2f);
+					marker_v2i.valueOf()._icon.style.filter = 'hue-rotate(180deg)';
+					marker_v2f.valueOf()._icon.style.filter = 'hue-rotate(180deg)';
+				}												
+
 				map.on('click', onMapClick);	
 			});
 
 		});
+
 	  
 		$('input[name="datetimes"]').on('cancel.daterangepicker', function(ev, picker) {
 			$(this).val('');
