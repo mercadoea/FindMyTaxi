@@ -11,60 +11,6 @@
 		document.getElementById("openButton").style.display = "block";
 	}
 
-		var Valor=1;
-
-		const Menu = document.getElementById('Auto');
-        Menu.addEventListener('focusout', (event) => {
-        start=true;
-		Valor = document.getElementById("Auto").value;
-
-				if(Valor==1 || Valor==2){
-					$('#Latitud').load("Latitud"+Valor+".php",function(){
-						var Latitud=parseFloat($('#Latitud').text());
-						var Longitud= parseFloat($('#Longitud').text());
-						var newLatLng = new L.LatLng(Latitud, Longitud);
-					});
-					$('#Longitud').load("Longitud"+Valor+".php",function(){
-						var Latitud=parseFloat($('#Latitud').text());
-						var Longitud= parseFloat($('#Longitud').text());
-						var newLatLng = new L.LatLng(Latitud, Longitud);				
-					});
-					$('#Fecha').load("Fecha"+Valor+".php");
-					$('#Hora').load("Hora"+Valor+".php");
-					$('#Distancia').load("Distancia"+Valor+".php");
-				}
-					$('#Latitud1').load("Latitud1.php",function(){
-						var Latitud1=parseFloat($('#Latitud1').text());
-						var Longitud1= parseFloat($('#Longitud1').text());
-						var newLatLng1 = new L.LatLng(Latitud1, Longitud1);
-					});
-					$('#Longitud1').load("Longitud1.php",function(){
-						var Latitud1=parseFloat($('#Latitud1').text());
-						var Longitud1= parseFloat($('#Longitud1').text());
-						var newLatLng1 = new L.LatLng(Latitud1, Longitud1);			
-					});
-					$('#Fecha1').load("Fecha1.php");
-					$('#Hora1').load("Hora1.php");
-					$('#Distancia1').load("Distancia1.php");
-
-					$('#Latitud2').load("Latitud2.php",function(){
-						var Latitud2=parseFloat($('#Latitud2').text());
-						var Longitud2= parseFloat($('#Longitud2').text());
-						var newLatLng2 = new L.LatLng(Latitud2, Longitud2);
-					});
-					$('#Longitud2').load("Longitud2.php",function(){
-						var Latitud2=parseFloat($('#Latitud2').text());
-						var Longitud2= parseFloat($('#Longitud2').text());
-						var newLatLng2 = new L.LatLng(Latitud2, Longitud2);			
-					});
-					$('#Fecha2').load("Fecha2.php");
-					$('#Hora2').load("Hora2.php");
-					$('#Distancia2').load("Distancia2.php");
-		
-
-		
-        });
-
 
 	$(document).ready(function(){
 		setInterval(
@@ -82,7 +28,44 @@
 					$('#Hora2').load("Hora2.php");
 					$('#Distancia2').load("Distancia2.php");
 
+					Valor = document.getElementById("Auto").value;
+					mostrar(Valor);
 					
+			},1500
+		);			
+	});
+
+
+		document.getElementById('Auto').onchange = function () {
+			Valor = document.getElementById("Auto").value;
+			mostrar(Valor);
+
+		};
+
+
+		function asignar_color(){
+			    	var Distancia1 = parseFloat($("#Distancia1").text());
+					var Distancia2 = parseFloat($("#Distancia2").text());
+				
+					if(Distancia1<=150 && Distancia1>100){
+						document.getElementById("distance2").style.backgroundColor = "#FFF929";
+					} else if(Distancia1<=100){
+						document.getElementById("distance2").style.backgroundColor = "#F31C1C";
+					} else if(Distancia1>150){
+						document.getElementById("distance2").style.backgroundColor = "#15FB4D";
+					}
+
+					if(Distancia2<=150 && Distancia2>100){
+						document.getElementById("distance3").style.backgroundColor = "#FFF929";
+					} else if(Distancia2<=100){
+						document.getElementById("distance3").style.backgroundColor = "#F31C1C";
+					} else if(Distancia2>150){
+						document.getElementById("distance3").style.backgroundColor = "#15FB4D";
+					}
+		}
+
+
+		function mostrar (Valor){
 					var Latitud1=parseFloat($("#Latitud1").text());
 					var Longitud1= parseFloat($("#Longitud1").text());
 					
@@ -92,8 +75,7 @@
 					polyline_v1.addLatLng([Latitud1,Longitud1])	
 					polyline_v2.addLatLng([Latitud2,Longitud2])	
 
-
-			if(Valor==1){
+					if(Valor==1){
 					$('#Latitud').load("Latitud1.php");
 					$('#Longitud').load("Longitud1.php");
 					$('#Fecha').load("Fecha1.php");
@@ -110,7 +92,6 @@
 					map.removeLayer(polyline_v2);
 					map.removeLayer(marker_v2);
 					map.addLayer(marker_v1);
-					var Distancia = parseFloat($("#Distancia1").text());
 					var newLatLng = new L.LatLng(Latitud1, Longitud1);
     					marker_v1.setLatLng(newLatLng); 
 				    	marker_v1.bindPopup("Vehículo 1").openPopup();
@@ -124,13 +105,7 @@
 						map.setView([Latitud1,Longitud1]);					
 					}
 
-					if(Distancia<=150 && Distancia>100){
-						document.getElementById("distance").style.backgroundColor = "#FFF929";
-					} else if(Distancia<=100){
-						document.getElementById("distance").style.backgroundColor = "#F31C1C";
-					} else if(Distancia>150){
-						document.getElementById("distance").style.backgroundColor = "#15FB4D";
-					}
+					asignar_color();
 
 			}else if (Valor==2){
 					$('#Latitud').load("Latitud2.php");
@@ -148,7 +123,6 @@
 					document.getElementById("distance2").style.display = "none";
 					document.getElementById("distance3").style.display = "none";
 
-					var Distancia = parseFloat($("#Distancia2").text());
 					var newLatLng = new L.LatLng(Latitud2, Longitud2);
     					marker_v2.setLatLng(newLatLng); 
 					marker_v2.valueOf()._icon.style.filter = 'hue-rotate(180deg)';
@@ -163,13 +137,7 @@
 						map.setView([Latitud2,Longitud2]);					
 					}
 
-					if(Distancia<=150 && Distancia>100){
-						document.getElementById("distance").style.backgroundColor = "#FFF929";
-					} else if(Distancia<=100){
-						document.getElementById("distance").style.backgroundColor = "#F31C1C";
-					} else if(Distancia>150){
-						document.getElementById("distance").style.backgroundColor = "#15FB4D";
-					}
+					asignar_color();
 
 
 			}else if(Valor==3){
@@ -188,34 +156,16 @@
 					document.getElementById("distance2").style.display = "block";
 					document.getElementById("distance3").style.display = "block";
 
-
-					var Distancia1 = parseFloat($("#Distancia1").text());
-					var Distancia2 = parseFloat($("#Distancia2").text());
-
 					var newLatLng1 = new L.LatLng(Latitud1, Longitud1);
     					marker_v1.setLatLng(newLatLng1);
 					var newLatLng2 = new L.LatLng(Latitud2, Longitud2);
     					marker_v2.setLatLng(newLatLng2);
-				
-					if(Distancia1<=150 && Distancia1>100){
-						document.getElementById("distance2").style.backgroundColor = "#FFF929";
-					} else if(Distancia1<=100){
-						document.getElementById("distance2").style.backgroundColor = "#F31C1C";
-					} else if(Distancia1>150){
-						document.getElementById("distance2").style.backgroundColor = "#15FB4D";
-					}
 
-					if(Distancia2<=150 && Distancia2>100){
-						document.getElementById("distance3").style.backgroundColor = "#FFF929";
-					} else if(Distancia2<=100){
-						document.getElementById("distance3").style.backgroundColor = "#F31C1C";
-					} else if(Distancia2>150){
-						document.getElementById("distance3").style.backgroundColor = "#15FB4D";
-					}
-
+    				asignar_color();
 				}
 
-			},1500
-		);			
-	});
+		}
+
+
+
 
