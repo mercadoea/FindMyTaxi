@@ -1,7 +1,6 @@
-function areaValue(min) {
-	var min = document.getElementById("myRange").value = min;
+function areaValue() {
+	var min = document.getElementById("myRange").value;
 }
-min = 15;
 var LatLon = [10.996863,-74.810319];
 var map = L.map('map').setView(LatLon,16);
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
