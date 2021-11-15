@@ -1,4 +1,6 @@
 function onMapClick(e) {
+	let min = document.getElementById("myRange").value;
+	
 	var checkBox = document.getElementById("miCheckUbication");
 	if (checkBox.checked == true){
 		document.getElementById("historialtitle").style.display = "block";
