@@ -1,4 +1,4 @@
-const svg = d3.select("svg");
+const slider = document.getElementbyId("myRange");
 var LatLon = [10.996863,-74.810319];
 var map = L.map('map').setView(LatLon,16);
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -11,28 +11,18 @@ var marker_v2i = L.marker(LatLon).addTo(map);
 var marker_v1f = L.marker(LatLon).addTo(map);
 var marker_v2f = L.marker(LatLon).addTo(map);
 var popup = L.popup();
-var min = 15;
-function areaValue(val){
-	min = val;
-}
-
-// Event slider for input slider
-
-const circle = svg
- 	.append("circle")
- 	.attr("cx", 100)
- 	.attr("cy", 100)
-	.attr("fill", "#69B4FD")
- 	.attr("stroke", "blue")
-	.attr("fillOpacity", "0.5")
-	.attr("r", 15);
-      
-L.circle([0,0]).addTo(map);
-
-function update(radius) {
-  circle.attr('r', radius);
-}
-
-d3.select('#myRange').on('input', function() {
-  update(parseInt(this.value));
+var min = 15
+slider.addEventListener("input", (e) => {
+	let r = e.target.value;
+	setRadius();
 });
+function setRadius() {
+	min=r;
+}
+var circle = L.circle([0,0], {
+					color: 'blue',
+					fillColor: '#69B4FD',
+					fillOpacity: 0.5,
+					radius: min
+				}).addTo(map);
+
