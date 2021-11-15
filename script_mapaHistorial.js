@@ -1,6 +1,7 @@
 function onMapClick(e) {
 	var checkBox = document.getElementById("miCheckUbication");
 	if (checkBox.checked == true){
+		document.getElementById("historialtitle").style.display = "block";
 		var latlon_click=e.latlng;
 		var Fecha=[];
 		var n=0;
@@ -11,6 +12,7 @@ function onMapClick(e) {
 				n=n+1;
 			}
 		}
+		document.getElementById('fechashist').innerHTML = "Coordenadas geográficas: <br>" + latlon_click.toString()+'<br> Fechas: <br>' + Fecha.join('<br>');
 		circle
 		.setLatLng(latlon_click);
 		popup
@@ -18,6 +20,7 @@ function onMapClick(e) {
 		.setContent("Coordenadas geográficas: <br>" + latlon_click.toString()+'<br> Fechas: <br>' + Fecha.join('<br>') )
 		.openOn(map);
 	}else if (checkBox.checked == false){ 
+		document.getElementById("historialtitle").style.display = "none";
 		circle
 		.setLatLng([0,0]);
 		}
