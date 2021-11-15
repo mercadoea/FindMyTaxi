@@ -11,7 +11,7 @@ var marker_v1f = L.marker(LatLon).addTo(map);
 var marker_v2f = L.marker(LatLon).addTo(map);
 var popup = L.popup();
 function areaValue(){
-	var min = document.getElementById("myRange").value);
+	var min = document.getElementById("myRange").value;
 }
 var circle = L.circle([0,0], {
 					color: 'blue',
