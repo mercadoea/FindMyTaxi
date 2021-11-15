@@ -23,6 +23,7 @@ function searchAgain() {
 			autoUpdateInput: false,
 			timePicker24Hour: true,
 			showDropdowns: true,
+			drops: 'up',
 			locale: {
 				format: 'YYYY-MM-DD hh:mm:ss',
 				applyLabel: "Buscar",
