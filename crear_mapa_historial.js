@@ -1,5 +1,6 @@
 function areaValue(min) {
 	//var min = document.getElementById("myRange").value;
+	console.log(min,"here");
 }
 var LatLon = [10.996863,-74.810319];
 var map = L.map('map').setView(LatLon,16);
