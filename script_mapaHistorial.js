@@ -11,6 +11,7 @@ function onMapClick(e) {
 				Fecha[n]=latlon[i][2];
 				n=n+1;
 			}
+			console.log(r);
 		}
 		document.getElementById('fechashist').innerHTML = "<b> Coordenadas geográficas: </b> <br>" + latlon_click.toString()+'<br> <b> Fechas: </b> <br>' + Fecha.join('<br>');
 		circle
