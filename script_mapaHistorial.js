@@ -9,7 +9,7 @@ function onMapClick(e) {
 		var n=0;
 		for(var i = 0; i<= latlon.length-1; i++){
 			var distance = map.distance(latlon_click , [  latlon[i][0] , latlon[i][1]   ]);
-			if (distance < min) {
+			if (distance < r) {
 				Fecha[n]=latlon[i][2];
 				n=n+1;
 			}
