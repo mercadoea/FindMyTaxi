@@ -6,11 +6,15 @@ function openNav() {
     }
 
     /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-    function closeNav() {
-        document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-        document.getElementById("openButton").style.display = "block";
-    }
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    document.getElementById("openButton").style.display = "block";
+}
+
+function searchAgain() {
+	document.getElementById("search").style.display = "none";
+	document.getElementById("filter").style.display = "block";}
     
 	$(function() {
 		$('input[name="datetimes"]').daterangepicker({
@@ -27,15 +31,19 @@ function openNav() {
 			},
     	  	minYear: 1901,
     		maxYear: parseInt(moment().format('YYYY'),10)
-		  
-		});	 
 
-
-
+		});
+		 
 		$('input[name="datetimes"]').on('apply.daterangepicker', function(ev, picker) {
 			polyline_v1.setLatLngs([]);
 			polyline_v2.setLatLngs([]);
 			$(this).val(picker.startDate.format('YYYY-MM-DD hh:mm:ss') + ' - ' + picker.endDate.format('YYYY-MM-DD hh:mm:ss'));
+			document.getElementById('start').innerHTML = picker.startDate.format('YYYY-MM-DD hh:mm:ss');
+			document.getElementById('end').innerHTML = picker.endDate.format('YYYY-MM-DD hh:mm:ss');
+			
+			document.getElementById("search").style.display = "block";
+			document.getElementById("filter").style.display = "none";
+			
 			$.post('consulta_historico.php', {startDate: picker.startDate.format('YYYY-MM-DD hh:mm:ss'), endDate: picker.endDate.format('YYYY-MM-DD hh:mm:ss')}, function(data) {
 				latlon = JSON.parse(data);
 				console.log(data);
