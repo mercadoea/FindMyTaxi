@@ -13,6 +13,7 @@ var popup = L.popup();
 function areaValue(){
 	var min = document.getElementById("myRange").value;
 }
+console.log(min);
 var circle = L.circle([0,0], {
 					color: 'blue',
 					fillColor: '#69B4FD',
