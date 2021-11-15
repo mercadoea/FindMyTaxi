@@ -22,7 +22,6 @@ function searchAgain() {
 			timePickerSeconds: true,
 			autoUpdateInput: false,
 			timePicker24Hour: true,
-			opens: 'right',
 			showDropdowns: true,
 			locale: {
 				format: 'YYYY-MM-DD hh:mm:ss',
