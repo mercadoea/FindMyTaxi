@@ -18,7 +18,7 @@ slider.addEventListener("input", (e) => {
 });
 function setRadius() {
 	min=r;
-}
+};
 var circle = L.circle([0,0], {
 					color: 'blue',
 					fillColor: '#69B4FD',
