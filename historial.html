@@ -16,7 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 
-<body style= "background-color:#FCA652">	  
+<body style= "background-color:#0e5d81">	  
 
 	<div id="mySidebar" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><p style="float: right;">&times; Cerrar Menú &nbsp;&nbsp;</p></a>
@@ -44,23 +44,54 @@
 				<option value=3>Auto 1 y 2</option>
 			</select>
 		</div>
-		
-			<div class="datetime">
-				<hr></hr>
+
+		<div class="historialtitle" id="historialtitle" >
+			<br>
+				<b style="font-size: 20px;">Historial de ubicación</b>
+			</br>
+			<div class="daterecord" id="daterecord" >
 				<br>
-					<b style="font-size: 18px;">Selecciona el rango de fecha y hora de filtrado:
+					<label id="fechashist"></label>
+				</br>
+			</div>
+		</div>
+		
+		
+	</div>  
+
+	<div class = "boxhist">
+		<div class="texthist">
+			<div class="datetime" id="filter">
+				<br>
+					<b style="font-size: 16px;">Selecciona el rango de fecha y hora de filtrado:
 						<br>				
 							<input type="text" name="datetimes" autocomplete="off"/>
 						</br>
 					</b>
 				</br>
 			</div>
-			<div class="filterbyubication">
-			
-					Filtrar por Ubicación &nbsp;&nbsp; <input type="checkbox" name="miCheckUbication" id="miCheckUbication" onclick="onMapClick()">
-				
+
+			<div class="searchbox" id="search">
+				<b>Rango de fecha de busqueda:</b> &nbsp;&nbsp; 
+				<div id="fechas">
+					<label id="start"></label> a <label id="end"></label>
+				</div>
+				<br>
+					<div class="filterbyubication">
+						Filtrar por Ubicación &nbsp;&nbsp; <input type="checkbox" name="miCheckUbication" id="miCheckUbication" onclick="onMapClick()">
+					</div>
+
+					<div class="rangesliderbox">
+						Tamaño del área de busqueda: 
+						<br><input type="range" id="myRange" min="10" max="50" value="15" class="rangeslider"></br>
+					</div>
+				</br>
+
+				<button class="backbtn" onclick="searchAgain()">Buscar otra fecha</button>
 			</div>
-	</div>  
+		</div>
+
+	</div>
 
 
 <div id="main" class="main">
