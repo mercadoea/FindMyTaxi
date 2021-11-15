@@ -13,8 +13,8 @@ var popup = L.popup();
 var min = 15;
 function areaValue(val){
 	min = val;
+	console.log(min);
 }
-console.log(min);
 var circle = L.circle([0,0], {
 					color: 'blue',
 					fillColor: '#69B4FD',
