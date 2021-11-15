@@ -1,3 +1,4 @@
+
 var LatLon = [10.996863,-74.810319];
 var map = L.map('map').setView(LatLon,16);
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -10,7 +11,7 @@ var marker_v2i = L.marker(LatLon).addTo(map);
 var marker_v1f = L.marker(LatLon).addTo(map);
 var marker_v2f = L.marker(LatLon).addTo(map);
 var popup = L.popup();
-var min = 15;
+
 var circle = L.circle([0,0], {
 					color: 'blue',
 					fillColor: '#69B4FD',
