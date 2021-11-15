@@ -10,8 +10,9 @@ var marker_v2i = L.marker(LatLon).addTo(map);
 var marker_v1f = L.marker(LatLon).addTo(map);
 var marker_v2f = L.marker(LatLon).addTo(map);
 var popup = L.popup();
-function areaValue(){
-	var min = document.getElementById("myRange").value;
+var min = 15;
+function areaValue(val){
+	min = val;
 }
 console.log(min);
 var circle = L.circle([0,0], {
