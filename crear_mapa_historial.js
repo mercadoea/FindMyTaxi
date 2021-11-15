@@ -1,4 +1,4 @@
-const slider = document.getElementbyId("myRange");
+const slider = document.getElementById("myRange");
 let r = 0;
 var LatLon = [10.996863,-74.810319];
 var map = L.map('map').setView(LatLon,16);
