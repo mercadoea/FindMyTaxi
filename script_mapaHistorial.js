@@ -17,7 +17,7 @@ function onMapClick(e) {
 		}
 		
 		for(var i = 0; i <= n - 1; i ++) {
-			document.getElementById('fechashist').innerHTML = "<b> Coordenadas geográficas: </b> <br>" + latlon_click.toString()+'<br> <b> Fechas: </b> <br>' + Fecha.join('<br> Distancia = ' + Distancia[i] + 'cm <br>');
+			document.getElementById('fechashist').innerHTML = "<b> Coordenadas geográficas: </b> <br>" + latlon_click.toString()+'<br> <b> Fechas: </b> <br>' +  i +'. ' + Fecha[i] + '<br> Distancia = ' + Distancia[i] + 'cm <br>';
 		}
 		
 		circle
