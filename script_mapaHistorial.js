@@ -17,7 +17,7 @@ function onMapClick(e) {
 		}
 		console.log(r);
 
-		document.getElementById('fechashist').innerHTML = "<b> Coordenadas geográficas: </b> <br>" + latlon_click.toString()+'<br> <b> Fechas: </b> <br>' + Fecha.join('<br>') + '<br> Distancia = ' + Distancia.join('<br>');
+		document.getElementById('fechashist').innerHTML = "<b> Coordenadas geográficas: </b> <br>" + latlon_click.toString()+'<br> <b> Fechas: </b> <br>' + Fecha.join('<br> Distancia = ' + Distancia);
 		circle
 		.setLatLng(latlon_click);
 		popup
