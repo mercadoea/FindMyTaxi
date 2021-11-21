@@ -16,7 +16,7 @@ function onMapClick(e) {
 			}
 		}
 		
-		document.getElementById('ubi"').innerHTML = "<b> Coordenadas geográficas: </b> <br>" + latlon_click.toString()+'<br>';
+		document.getElementById('ubi').innerHTML = "<b> Coordenadas geográficas: </b> <br>" + latlon_click.toString()+'<br>';
 		document.getElementById('fechashist').innerHTML = '<b> Fechas: </b> <br>' + Fecha.join('<br>');
 		document.getElementById('distanciashist').innerHTML = '<b> Distancias: </b> <br>' + Distancia.join('<br>');
 
