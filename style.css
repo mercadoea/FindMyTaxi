@@ -261,6 +261,11 @@
         height:200px;
         color: white;
         overflow : auto;
+        display: flex;
+    }
+    
+    .column {
+        flex: 50%;
     }
 
     .rangeslider {
