@@ -7,7 +7,7 @@ if(isset($_POST["startDate"]) && $_POST["endDate"]) {
 	$date_f = intval(preg_replace('/[^0-9]+/', '', $endDate), 10);
 	$historical = mysqli_query($connection,"SELECT * FROM location WHERE dateTime>=$date_i AND dateTime<=$date_f ORDER BY ID ASC");
 	while($consulta=mysqli_fetch_array($historical)){
-		$poly[]=array((float) $consulta['lat'],(float) $consulta['lon'],(string) $consulta['dateTime'], (string) $consulta['ID_C']);		
+		$poly[]=array((float) $consulta['lat'],(float) $consulta['lon'],(string) $consulta['dateTime'], (string) $consulta['ID_C'], (float) $consulta['dist']);		
 	}
 	echo json_encode($poly);
 }
