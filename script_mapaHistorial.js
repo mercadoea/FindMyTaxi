@@ -5,17 +5,19 @@ function onMapClick(e) {
 		document.getElementById("historialtitle").style.display = "block";
 		var latlon_click=e.latlng;
 		var Fecha=[];
+		var Distancia=[];
 		var n=0;
 		for(var i = 0; i<= latlon.length-1; i++){
 			var distance = map.distance(latlon_click , [  latlon[i][0] , latlon[i][1]   ]);
 			if (distance < r) {
 				Fecha[n]=latlon[i][2];
+				Distancia[n]=latlon[i][4];
 				n=n+1;
 			}
 		}
 		console.log(r);
 
-		document.getElementById('fechashist').innerHTML = "<b> Coordenadas geográficas: </b> <br>" + latlon_click.toString()+'<br> <b> Fechas: </b> <br>' + Fecha.join('<br>');
+		document.getElementById('fechashist').innerHTML = "<b> Coordenadas geográficas: </b> <br>" + latlon_click.toString()+'<br> <b> Fechas: </b> <br>' + Fecha.join('<br>') + 'Distancia = ' + Distancia.join) ;
 		circle
 		.setLatLng(latlon_click);
 		popup
