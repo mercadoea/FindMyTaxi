@@ -16,8 +16,10 @@ function onMapClick(e) {
 			}
 		}
 		console.log(r);
-
-		document.getElementById('fechashist').innerHTML = "<b> Coordenadas geográficas: </b> <br>" + latlon_click.toString()+'<br> <b> Fechas: </b> <br>' + Fecha.join('<br> Distancia = ' + Distancia);
+		
+		for(var i = 0; i <= n - 1; i ++) {
+			document.getElementById('fechashist').innerHTML = "<b> Coordenadas geográficas: </b> <br>" + latlon_click.toString()+'<br> <b> Fechas: </b> <br>' + Fecha.join('<br> Distancia = ' + Distancia[i]);
+		}
 		circle
 		.setLatLng(latlon_click);
 		popup
